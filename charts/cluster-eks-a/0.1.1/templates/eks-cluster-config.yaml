@@ -1,0 +1,26 @@
+apiVersion: eks.cattle.io/v1
+kind: EKSClusterConfig
+metadata:
+  name: {{ .Values.clusterName }}
+  namespace: cattle-global-data
+  ownerReferences:
+  - apiVersion: management.cattle.io/v3
+    kind: Cluster
+    name: {{ .Values.clusterName }}
+spec:
+  amazonCredentialSecret: {{ .Values.amazonCredentialSecret }}
+  displayName: {{ .Values.clusterDisplayName | quote }}
+  kubernetesVersion: {{ .Values.kubernetesVersion | quote }}
+  loggingTypes: []
+  nodeGroups:
+  - desiredSize: {{ .Values.nodeGroupDesiredSize }}
+    diskSize: 60
+    instanceType: {{ .Values.instanceType }}
+    labels: {}
+    minSize: {{ .Values.nodeGroupMinSize }}
+    maxSize: {{ .Values.nodeGroupMaxSize }}
+    nodegroupName: default
+    version: {{ .Values.kubernetesVersion | quote }}
+  privateAccess: false
+  publicAccess: true
+  region: {{ .Values.region }}

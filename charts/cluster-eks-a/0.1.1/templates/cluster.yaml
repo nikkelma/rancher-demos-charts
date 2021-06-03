@@ -1,0 +1,23 @@
+apiVersion: management.cattle.io/v3
+kind: Cluster
+metadata:
+  name: {{ .Values.clusterName }}
+spec:
+  displayName: {{ .Values.clusterDisplayName | quote }}
+  dockerRootDir: /var/lib/docker
+  fleetWorkspaceName: fleet-default
+  eksConfig:
+    amazonCredentialSecret: {{ .Values.amazonCredentialSecret }}
+    displayName: {{ .Values.clusterDisplayName | quote }}
+    kubernetesVersion: {{ .Values.kubernetesVersion | quote }}
+    nodeGroups:
+    - nodegroupName: default
+      instanceType: {{ .Values.instanceType }}
+      minSize: {{ .Values.nodeGroupMinSize }}
+      maxSize: {{ .Values.nodeGroupMaxSize }}
+      desiredSize: {{ .Values.nodeGroupDesiredSize }}
+      diskSize: 60
+      version: {{ .Values.kubernetesVersion | quote }}
+    publicAccess: {{ .Values.publicAccess }}
+    privateAccess: {{ .Values.privateAccess }}
+    region: {{ .Values.region }}
