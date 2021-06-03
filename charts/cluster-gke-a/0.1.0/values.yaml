@@ -1,0 +1,12 @@
+# required values
+clusterName: ""
+clusterDisplayName: ""
+googleCredentialSecret: ""
+googleProjectID: ""
+
+# optional values
+kubernetesVersion: 1.18.18-gke.1100
+machineType: n1-standard-2
+diskSizeGb: 100
+initialNodeCount: 2
+zone: us-central1-f

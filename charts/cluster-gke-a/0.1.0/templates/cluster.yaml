@@ -1,0 +1,44 @@
+apiVersion: management.cattle.io/v3
+kind: Cluster
+metadata:
+  name: {{ .Values.clusterName }}
+spec:
+  displayName: {{ .Values.clusterDisplayName }}
+  dockerRootDir: /var/lib/docker
+  fleetWorkspaceName: fleet-default
+  gkeConfig:
+    clusterAddons:
+      horizontalPodAutoscaling: true
+      httpLoadBalancing: true
+    clusterName: {{ .Values.clusterDisplayName }}
+    googleCredentialSecret: {{ .Values.googleCredentialSecret }}
+    ipAllocationPolicy:
+      useIpAliases: true
+    kubernetesVersion: {{ .Values.kubernetesVersion }}
+    loggingService: logging.googleapis.com/kubernetes
+    monitoringService: monitoring.googleapis.com/kubernetes
+    network: default
+    nodePools:
+    - autoscaling: {}
+      config:
+        diskSizeGb: {{ .Values.diskSizeGb }}
+        diskType: pd-standard
+        imageType: COS
+        machineType: {{ .Values.machineType }}
+        oauthScopes:
+        - https://www.googleapis.com/auth/devstorage.read_only
+        - https://www.googleapis.com/auth/logging.write
+        - https://www.googleapis.com/auth/monitoring
+        - https://www.googleapis.com/auth/servicecontrol
+        - https://www.googleapis.com/auth/service.management.readonly
+        - https://www.googleapis.com/auth/trace.append
+      initialNodeCount: {{ .Values.initialNodeCount }}
+      management:
+        autoRepair: true
+        autoUpgrade: true
+      maxPodsConstraint: 110
+      name: default
+      version: {{ .Values.kubernetesVersion }}
+    projectID: {{ .Values.googleProjectID }}
+    subnetwork: default
+    zone: {{ .Values.zone }}

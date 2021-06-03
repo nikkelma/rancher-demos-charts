@@ -1,0 +1,23 @@
+apiVersion: v1
+entries:
+  cluster-eks-a:
+  - apiVersion: v2
+    created: "2021-06-02T23:13:48.52147-04:00"
+    description: A Helm chart for Kubernetes
+    digest: cfdfa7e3cb07c4e9b5079451614de346fee8cf98ba8b81fb35b85529b92a7630
+    name: cluster-eks-a
+    type: application
+    urls:
+    - assets/cluster-eks-a-0.1.0.tgz
+    version: 0.1.0
+  cluster-gke-a:
+  - apiVersion: v2
+    created: "2021-06-02T23:13:48.521796-04:00"
+    description: A Helm chart for Kubernetes
+    digest: 0c9fd29ff31b8453e38e81823115f3c99bc08d323c9f9650cf1e00138027752d
+    name: cluster-gke-a
+    type: application
+    urls:
+    - assets/cluster-gke-a-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-06-02T23:13:48.520274-04:00"
