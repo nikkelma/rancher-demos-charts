@@ -1,0 +1,55 @@
+apiVersion: management.cattle.io/v3
+kind: Cluster
+metadata:
+  name: {{ .Values.clusterName }}
+spec:
+  agentImageOverride: ""
+  answers: {}
+  description: ""
+  desiredAgentImage: ""
+  desiredAuthImage: ""
+  displayName: {{ .Values.clusterDisplayName | quote }}
+  dockerRootDir: /var/lib/docker
+  eksConfig:
+    amazonCredentialSecret: {{ .Values.amazonCredentialSecret }}
+    displayName: {{ .Values.clusterDisplayName | quote }}
+    imported: false
+    kmsKey: ""
+    kubernetesVersion: {{ .Values.kubernetesVersion | quote }}
+    loggingTypes: []
+    nodeGroups:
+    - desiredSize: {{ .Values.nodeGroupDesiredSize }}
+      diskSize: 60
+      ec2SshKey: ""
+      gpu: false
+      imageId: ""
+      instanceType: {{ .Values.instanceType }}
+      labels: {}
+      launchTemplate: null
+      maxSize: {{ .Values.nodeGroupMaxSize }}
+      minSize: {{ .Values.nodeGroupMinSize }}
+      nodegroupName: default
+      requestSpotInstances: false
+      resourceTags: {}
+      spotInstanceTypes: []
+      subnets: []
+      tags: {}
+      userData: ""
+      version: {{ .Values.kubernetesVersion | quote }}
+    privateAccess: {{ .Values.privateAccess }}
+    publicAccess: {{ .Values.publicAccess }}
+    publicAccessSources: []
+    region: {{ .Values.region }}
+    secretsEncryption: false
+    securityGroups: []
+    serviceRole: ""
+    subnets: []
+    tags: {}
+  enableClusterAlerting: false
+  enableClusterMonitoring: false
+  enableNetworkPolicy: false
+  fleetWorkspaceName: fleet-default
+  internal: false
+  localClusterAuthEndpoint:
+    enabled: false
+  windowsPreferedCluster: false

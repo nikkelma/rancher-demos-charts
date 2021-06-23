@@ -1,0 +1,14 @@
+# required values
+clusterName: ""
+clusterDisplayName: ""
+amazonCredentialSecret: ""
+
+# optional values
+kubernetesVersion: "1.18"
+instanceType: t3a.xlarge
+nodeGroupMinSize: 1
+nodeGroupMaxSize: 2
+nodeGroupDesiredSize: 1
+publicAccess: true
+privateAccess: false
+region: us-west-2
