@@ -1,0 +1,6 @@
+# required values
+clusterName: ""
+clusterDisplayName: ""
+
+# optional values
+kubernetesVersion: "v1.19.9-rancher1-1"

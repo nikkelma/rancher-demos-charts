@@ -1,0 +1,57 @@
+apiVersion: management.cattle.io/v3
+kind: Cluster
+metadata:
+  name: {{ .Values.clusterName }}
+spec:
+  agentImageOverride: ""
+  answers: {}
+  description: ""
+  desiredAgentImage: ""
+  desiredAuthImage: ""
+  displayName: {{ .Values.clusterDisplayName | quote }}
+  dockerRootDir: /var/lib/docker
+  enableClusterAlerting: false
+  enableClusterMonitoring: false
+  enableNetworkPolicy: false
+  fleetWorkspaceName: fleet-default
+  internal: false
+  localClusterAuthEndpoint:
+    enabled: false
+  rancherKubernetesEngineConfig:
+    addonJobTimeout: 45
+    authentication:
+      strategy: x509
+    authorization: {}
+    bastionHost: {}
+    cloudProvider: {}
+    clusterName: {{ .Values.clusterDisplayName | quote }}
+    ignoreDockerVersion: true
+    ingress: {}
+    kubernetesVersion: {{ .Values.kubernetesVersion | quote }}
+    monitoring: {}
+    network:
+      plugin: canal
+    restore: {}
+    rotateEncryptionKey: false
+    services:
+      etcd:
+        backupConfig:
+          enabled: true
+          intervalHours: 12
+          retention: 6
+          s3BackupConfig: null
+      kubeApi: {}
+      kubeController: {}
+      kubelet: {}
+      kubeproxy: {}
+      scheduler: {}
+    sshAgentAuth: false
+    systemImages: {}
+    upgradeStrategy:
+      maxUnavailableControlplane: "1"
+      maxUnavailableWorker: 10%
+      nodeDrainInput:
+        gracePeriod: -1
+        ignoreDaemonSets: true
+        timeout: 120
+  windowsPreferedCluster: false
