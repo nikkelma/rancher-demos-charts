@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   cluster-custom-a:
   - apiVersion: v2
-    created: "2021-06-24T13:32:53.178851-04:00"
+    created: "2021-06-28T17:23:17.049271-04:00"
     description: A Helm chart for Kubernetes
     digest: 78c05dbeb1c780811ef82c5443e8bd2e53af47dc03ff831d1d24d476f214d666
     name: cluster-custom-a
@@ -11,7 +11,7 @@ entries:
     - assets/cluster-custom-a-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v2
-    created: "2021-06-24T13:32:53.178314-04:00"
+    created: "2021-06-28T17:23:17.048746-04:00"
     description: A Helm chart for Kubernetes
     digest: 16df5ffc33fa6407e6b53a6ebef611cbda26f953bc86f6cbaa6957fbd8d3d314
     name: cluster-custom-a
@@ -21,7 +21,16 @@ entries:
     version: 0.1.0
   cluster-eks-a:
   - apiVersion: v2
-    created: "2021-06-24T13:32:53.181185-04:00"
+    created: "2021-06-28T17:23:17.051686-04:00"
+    description: A Helm chart for Kubernetes
+    digest: 04e3ee1ac84a0342689da497ddcfbd7aa415ab5723247487ddf83484c47a27e4
+    name: cluster-eks-a
+    type: application
+    urls:
+    - assets/cluster-eks-a-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    created: "2021-06-28T17:23:17.051416-04:00"
     description: A Helm chart for Kubernetes
     digest: 60807bd05020bf691efd757e91a7b089ef0e12b9d28c6731859e3bb20300fd03
     name: cluster-eks-a
@@ -30,7 +39,7 @@ entries:
     - assets/cluster-eks-a-0.1.3.tgz
     version: 0.1.3
   - apiVersion: v2
-    created: "2021-06-24T13:32:53.180868-04:00"
+    created: "2021-06-28T17:23:17.050895-04:00"
     description: A Helm chart for Kubernetes
     digest: 7e3831036988ba1e240401d6b35fdd628ccbff07309a00891a3a0f2870c1763e
     name: cluster-eks-a
@@ -39,7 +48,7 @@ entries:
     - assets/cluster-eks-a-0.1.2.tgz
     version: 0.1.2
   - apiVersion: v2
-    created: "2021-06-24T13:32:53.179832-04:00"
+    created: "2021-06-28T17:23:17.050377-04:00"
     description: A Helm chart for Kubernetes
     digest: 7bb3e2dfe9217a570262635f73e135b1c73b3910a18d54ba88f88ed7e63b4448
     name: cluster-eks-a
@@ -48,7 +57,7 @@ entries:
     - assets/cluster-eks-a-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v2
-    created: "2021-06-24T13:32:53.179158-04:00"
+    created: "2021-06-28T17:23:17.049858-04:00"
     description: A Helm chart for Kubernetes
     digest: cfdfa7e3cb07c4e9b5079451614de346fee8cf98ba8b81fb35b85529b92a7630
     name: cluster-eks-a
@@ -58,7 +67,7 @@ entries:
     version: 0.1.0
   cluster-gke-a:
   - apiVersion: v2
-    created: "2021-06-24T13:32:53.181812-04:00"
+    created: "2021-06-28T17:23:17.05356-04:00"
     description: A Helm chart for Kubernetes
     digest: 35dfdac6b76a3bf75d964da0a10adb969dda5147fe462df8c8348906818e4659
     name: cluster-gke-a
@@ -67,7 +76,7 @@ entries:
     - assets/cluster-gke-a-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v2
-    created: "2021-06-24T13:32:53.181531-04:00"
+    created: "2021-06-28T17:23:17.053047-04:00"
     description: A Helm chart for Kubernetes
     digest: 0c9fd29ff31b8453e38e81823115f3c99bc08d323c9f9650cf1e00138027752d
     name: cluster-gke-a
@@ -75,4 +84,4 @@ entries:
     urls:
     - assets/cluster-gke-a-0.1.0.tgz
     version: 0.1.0
-generated: "2021-06-24T13:32:53.177808-04:00"
+generated: "2021-06-28T17:23:17.047867-04:00"
