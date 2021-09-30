@@ -1,0 +1,44 @@
+# REQUIRED
+cloudCredential: ""
+
+nodepoolControlplane:
+  # REQUIRED
+  # name of nodepool
+  name: ""
+  # Ubuntu AMI ID (must exist in configured region, below)
+  ami: ""
+  # VPC ID
+  vpcId: ""
+
+  # OPTIONAL
+  # number of nodes in the pool
+  quantity: 3
+  # instance type to use (must exist in configured region, below)
+  instanceType: "t3a.large"
+  # region used for instances
+  region: "us-east-1"
+
+nodepoolWorker:
+  # REQUIRED
+  # name of nodepool
+  name: ""
+  # Ubuntu AMI ID (must exist in given region, below)
+  ami: ""
+  # VPC ID
+  vpcId: ""
+
+  # OPTIONAL
+  # number of nodes in the pool
+  quantity: 2
+  # instance type to use (must exist in configured region, below)
+  instanceType: "t3a.xlarge"
+  # region used for instances
+  region: "us-east-1"
+
+# OPTIONAL
+# RKE2
+kubernetesVersion: "v1.21.4+rke2r2"
+
+# configure names and helm chart
+nameOverride: ""
+fullnameOverride: ""
