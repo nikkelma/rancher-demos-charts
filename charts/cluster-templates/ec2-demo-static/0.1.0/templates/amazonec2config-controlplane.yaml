@@ -1,0 +1,40 @@
+accessKey: null
+ami: {{ .Values.nodepoolControlplane.ami | quote }}
+apiVersion: rke-machine-config.cattle.io/v1
+blockDurationMinutes: "0"
+deviceName: null
+encryptEbsVolume: false
+endpoint: null
+httpEndpoint: null
+httpTokens: null
+iamInstanceProfile: null
+insecureTransport: false
+instanceType: {{ .Values.nodepoolControlplane.instanceType | quote }}
+keypairName: null
+kind: Amazonec2Config
+kmsKey: null
+metadata:
+  name: {{ include "ec2-demo-static.fullname" . }}-cp
+monitoring: false
+openPort: []
+privateAddressOnly: false
+region: {{ .Values.nodepoolControlplane.region | quote }}
+requestSpotInstance: false
+retries: "5"
+rootSize: "80"
+secretKey: null
+securityGroup:
+- rancher-nodes
+securityGroupReadonly: false
+sessionToken: null
+spotPrice: "0.50"
+sshKeyContents: null
+sshUser: ubuntu
+subnetId: null
+tags: null
+useEbsOptimizedInstance: false
+usePrivateAddress: false
+userdata: null
+volumeType: gp2
+vpcId: {{ .Values.nodepoolControlplane.vpcId | quote }}
+zone: a
