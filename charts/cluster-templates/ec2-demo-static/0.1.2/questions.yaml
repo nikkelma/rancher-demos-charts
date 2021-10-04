@@ -1,0 +1,93 @@
+questions:
+  - group: "Cluster Config"
+    label: "Kubernetes Version"
+    description: "RKE2 version to deploy"
+    required: true
+    variable: "kubernetesVersion"
+    type: string
+    default: "v1.21.4+rke2r2"
+  - group: "Cluster Config"
+    label: "Cloud Credential"
+    description: "AWS Cloud Credential used for provisioning instances"
+    required: true
+    variable: "cloudCredential"
+    type: cloudcredential
+    default: ""
+  - group: "Controlplane Nodepool"
+    label: "Name"
+    description: "Name of controlplane nodepool"
+    required: true
+    variable: "nodepoolControlplane.name"
+    type: string
+    default: ""
+  - group: "Controlplane Nodepool"
+    label: "Quantity"
+    description: "Number of nodes in controlplane nodepool"
+    variable: "nodepoolControlplane.quantity"
+    type: int
+    default: 3
+  - group: "Controlplane Nodepool"
+    label: "Instance Type"
+    description: "EC2 instance type of controlplane nodepool"
+    variable: "nodepoolControlplane.instanceType"
+    type: string
+    default: "t3a.large"
+  - group: "Controlplane Nodepool"
+    label: "Region"
+    description: "Region of controlplane nodepool instances"
+    variable: "nodepoolControlplane.region"
+    type: string
+    default: "us-east-1"
+  - group: "Controlplane Nodepool"
+    label: "AMI"
+    description: "AMI used for controlplane nodepool instances"
+    required: true
+    variable: "nodepoolControlplane.ami"
+    type: string
+    default: ""
+  - group: "Controlplane Nodepool"
+    label: "VPC"
+    description: "VPC ID of controlplane nodepool instances"
+    required: true
+    variable: "nodepoolControlplane.vpcId"
+    type: string
+    default: ""
+  - group: "Worker Nodepool"
+    label: "Name"
+    description: "Name of worker nodepool"
+    required: true
+    variable: "nodepoolWorker.name"
+    type: string
+    default: ""
+  - group: "Worker Nodepool"
+    label: "Quantity"
+    description: "Number of nodes in worker nodepool"
+    variable: "nodepoolWorker.quantity"
+    type: int
+    default: 2
+  - group: "Worker Nodepool"
+    label: "Instance Type"
+    description: "EC2 instance type of worker nodepool"
+    variable: "nodepoolWorker.instanceType"
+    type: string
+    default: "t3a.xlarge"
+  - group: "Worker Nodepool"
+    label: "Region"
+    description: "Region of worker nodepool instances"
+    variable: "nodepoolWorker.region"
+    type: string
+    default: "us-east-1"
+  - group: "Worker Nodepool"
+    label: "AMI"
+    description: "AMI used for worker nodepool instances"
+    required: true
+    variable: "nodepoolWorker.ami"
+    type: string
+    default: ""
+  - group: "Worker Nodepool"
+    label: "VPC"
+    description: "VPC ID of worker nodepool instances"
+    required: true
+    variable: "nodepoolWorker.vpcId"
+    type: string
+    default: ""
