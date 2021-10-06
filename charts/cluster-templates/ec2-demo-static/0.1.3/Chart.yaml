@@ -1,0 +1,9 @@
+apiVersion: v2
+name: ec2-demo-static
+description: Rancher EC2 node driver cluster template
+type: application
+version: 0.1.3
+appVersion: 0.1.3
+annotations:
+  catalog.cattle.io/type: cluster-template
+  catalog.cattle.io/namespace: fleet-default

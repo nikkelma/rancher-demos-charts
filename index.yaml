@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   cluster-custom-a:
   - apiVersion: v2
-    created: "2021-10-04T13:36:51.369949-04:00"
+    created: "2021-10-05T12:32:39.756045-04:00"
     description: A Helm chart for Kubernetes
     digest: 78c05dbeb1c780811ef82c5443e8bd2e53af47dc03ff831d1d24d476f214d666
     name: cluster-custom-a
@@ -11,7 +11,7 @@ entries:
     - assets/cluster-custom-a-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v2
-    created: "2021-10-04T13:36:51.369381-04:00"
+    created: "2021-10-05T12:32:39.755812-04:00"
     description: A Helm chart for Kubernetes
     digest: 16df5ffc33fa6407e6b53a6ebef611cbda26f953bc86f6cbaa6957fbd8d3d314
     name: cluster-custom-a
@@ -21,7 +21,7 @@ entries:
     version: 0.1.0
   cluster-eks-a:
   - apiVersion: v2
-    created: "2021-10-04T13:36:51.373097-04:00"
+    created: "2021-10-05T12:32:39.757492-04:00"
     description: A Helm chart for Kubernetes
     digest: 04e3ee1ac84a0342689da497ddcfbd7aa415ab5723247487ddf83484c47a27e4
     name: cluster-eks-a
@@ -30,7 +30,7 @@ entries:
     - assets/cluster-eks-a-0.1.4.tgz
     version: 0.1.4
   - apiVersion: v2
-    created: "2021-10-04T13:36:51.372436-04:00"
+    created: "2021-10-05T12:32:39.757221-04:00"
     description: A Helm chart for Kubernetes
     digest: 60807bd05020bf691efd757e91a7b089ef0e12b9d28c6731859e3bb20300fd03
     name: cluster-eks-a
@@ -39,7 +39,7 @@ entries:
     - assets/cluster-eks-a-0.1.3.tgz
     version: 0.1.3
   - apiVersion: v2
-    created: "2021-10-04T13:36:51.371835-04:00"
+    created: "2021-10-05T12:32:39.756936-04:00"
     description: A Helm chart for Kubernetes
     digest: 7e3831036988ba1e240401d6b35fdd628ccbff07309a00891a3a0f2870c1763e
     name: cluster-eks-a
@@ -48,7 +48,7 @@ entries:
     - assets/cluster-eks-a-0.1.2.tgz
     version: 0.1.2
   - apiVersion: v2
-    created: "2021-10-04T13:36:51.37129-04:00"
+    created: "2021-10-05T12:32:39.756651-04:00"
     description: A Helm chart for Kubernetes
     digest: 7bb3e2dfe9217a570262635f73e135b1c73b3910a18d54ba88f88ed7e63b4448
     name: cluster-eks-a
@@ -57,7 +57,7 @@ entries:
     - assets/cluster-eks-a-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v2
-    created: "2021-10-04T13:36:51.370641-04:00"
+    created: "2021-10-05T12:32:39.756326-04:00"
     description: A Helm chart for Kubernetes
     digest: cfdfa7e3cb07c4e9b5079451614de346fee8cf98ba8b81fb35b85529b92a7630
     name: cluster-eks-a
@@ -67,7 +67,7 @@ entries:
     version: 0.1.0
   cluster-gke-a:
   - apiVersion: v2
-    created: "2021-10-04T13:36:51.374225-04:00"
+    created: "2021-10-05T12:32:39.758069-04:00"
     description: A Helm chart for Kubernetes
     digest: 35dfdac6b76a3bf75d964da0a10adb969dda5147fe462df8c8348906818e4659
     name: cluster-gke-a
@@ -76,7 +76,7 @@ entries:
     - assets/cluster-gke-a-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v2
-    created: "2021-10-04T13:36:51.373637-04:00"
+    created: "2021-10-05T12:32:39.757775-04:00"
     description: A Helm chart for Kubernetes
     digest: 0c9fd29ff31b8453e38e81823115f3c99bc08d323c9f9650cf1e00138027752d
     name: cluster-gke-a
@@ -89,8 +89,21 @@ entries:
       catalog.cattle.io/namespace: fleet-default
       catalog.cattle.io/type: cluster-template
     apiVersion: v2
+    appVersion: 0.1.3
+    created: "2021-10-05T12:32:39.759912-04:00"
+    description: Rancher EC2 node driver cluster template
+    digest: 588476353eedb872a4519a063e4b2b641e8cd2269a316f11276ceeef27862e48
+    name: ec2-demo-static
+    type: application
+    urls:
+    - assets/ec2-demo-static-0.1.3.tgz
+    version: 0.1.3
+  - annotations:
+      catalog.cattle.io/namespace: fleet-default
+      catalog.cattle.io/type: cluster-template
+    apiVersion: v2
     appVersion: 0.1.2
-    created: "2021-10-04T13:36:51.376092-04:00"
+    created: "2021-10-05T12:32:39.75945-04:00"
     description: Rancher EC2 node driver cluster template
     digest: ffe74e8ba6b33b70326cfe9cced94d712d633865e8eaea99a4b0e83e9abcdcaa
     name: ec2-demo-static
@@ -103,7 +116,7 @@ entries:
       catalog.cattle.io/type: cluster-template
     apiVersion: v2
     appVersion: 0.1.1
-    created: "2021-10-04T13:36:51.375636-04:00"
+    created: "2021-10-05T12:32:39.758877-04:00"
     description: Rancher EC2 node driver cluster template
     digest: 581194c88f59fd474eeec61925b221997231f79f6231922de69c9a9b656ca1f5
     name: ec2-demo-static
@@ -116,7 +129,7 @@ entries:
       catalog.cattle.io/type: cluster-template
     apiVersion: v2
     appVersion: 0.1.0
-    created: "2021-10-04T13:36:51.374953-04:00"
+    created: "2021-10-05T12:32:39.758464-04:00"
     description: Rancher EC2 node driver cluster template
     digest: d85cf24ac33ca5998c40c045635d5accb421403da4840b6269a9c49819b8eedf
     name: ec2-demo-static
@@ -124,4 +137,4 @@ entries:
     urls:
     - assets/ec2-demo-static-0.1.0.tgz
     version: 0.1.0
-generated: "2021-10-04T13:36:51.367918-04:00"
+generated: "2021-10-05T12:32:39.755318-04:00"
