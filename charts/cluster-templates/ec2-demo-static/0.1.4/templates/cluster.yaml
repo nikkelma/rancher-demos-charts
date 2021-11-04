@@ -1,0 +1,88 @@
+apiVersion: provisioning.cattle.io/v1
+kind: Cluster
+metadata:
+  name: {{ include "ec2-demo-static.fullname" . }}
+spec:
+  cloudCredentialSecretName: {{ .Values.cloudCredential | quote }}
+  kubernetesVersion: {{ .Values.kubernetesVersion | quote }}
+  rkeConfig:
+    chartValues:
+      rke2-calico:
+        calicoctl:
+          image: rancher/mirrored-calico-ctl
+          tag: v3.19.2
+        certs:
+          node:
+            cert: null
+            commonName: null
+            key: null
+          typha:
+            caBundle: null
+            cert: null
+            commonName: null
+            key: null
+        felixConfiguration:
+          featureDetectOverride: ChecksumOffloadBroken=true
+        global:
+          systemDefaultRegistry: ""
+        imagePullSecrets: {}
+        installation:
+          calicoNetwork:
+            bgp: Disabled
+            ipPools:
+            - blockSize: 24
+              cidr: 10.42.0.0/16
+              encapsulation: VXLAN
+              natOutgoing: Enabled
+          controlPlaneTolerations:
+          - effect: NoSchedule
+            key: node-role.kubernetes.io/control-plane
+            operator: Exists
+          - effect: NoExecute
+            key: node-role.kubernetes.io/etcd
+            operator: Exists
+          enabled: true
+          imagePath: rancher
+          imagePrefix: mirrored-calico-
+          kubernetesProvider: ""
+        ipamConfig:
+          autoAllocateBlocks: true
+          strictAffinity: true
+        tigeraOperator:
+          image: rancher/mirrored-calico-operator
+          registry: docker.io
+          version: v1.17.6
+    etcd:
+      snapshotRetention: 5
+      snapshotScheduleCron: 0 */5 * * *
+    localClusterAuthEndpoint: {}
+    machineGlobalConfig:
+      cni: calico
+      disable-kube-proxy: false
+      etcd-expose-metrics: false
+      profile: null
+    machinePools:
+    - name: {{ include "ec2-demo-static.name" . }}-cp
+      quantity: {{ .Values.nodepoolControlplane.quantity }}
+      machineConfigRef:
+        kind: Amazonec2Config
+        name: {{ include "ec2-demo-static.fullname" . }}-cp
+      etcdRole: true
+      controlPlaneRole: true
+    - name: {{ include "ec2-demo-static.name" . }}-worker
+      quantity: {{ .Values.nodepoolWorker.quantity }}
+      machineConfigRef:
+        kind: Amazonec2Config
+        name: {{ include "ec2-demo-static.fullname" . }}-worker
+      workerRole: true
+    machineSelectorConfig:
+    - config:
+        protect-kernel-defaults: false
+    registries: {}
+    upgradeStrategy:
+      controlPlaneConcurrency: 10%
+      controlPlaneDrainOptions:
+        timeout: 0
+      workerConcurrency: 10%
+      workerDrainOptions:
+        timeout: 0
