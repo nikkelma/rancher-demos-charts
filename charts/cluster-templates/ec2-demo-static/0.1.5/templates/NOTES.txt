@@ -1,0 +1,1 @@
+EC2 cluster {{ include "ec2-demo-static.fullname" . }} is now being provisioned.
